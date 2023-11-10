@@ -28,6 +28,7 @@ main .user .buttons-user a{
     padding: 6px 14px;
     color: black;
     font-weight: bold;
+    font-family: var(--font-regular);
 }
 
 main .user .buttons-user .first-link{
@@ -42,35 +43,121 @@ main .user .buttons-user .second-link{
 main .searchBox{
     width: 100%;
     height: 95%;
-    background-image: url('./images/library-with-books.jpg');
+    background-image: url('../../images/library-with-books.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
-main .searchBox h1{
-    color: white;
+main .searchBox .fundo{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+    /* z-index: 1; */
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+main .searchBox .fundo h1{
     text-align: center;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    color: whitesmoke;
     font-size: 70px;
-    position: relative;
-    top: 25%;
-    z-index: 2;
+    font-weight: bold;
+    /* z-index: 2; */
+    font-family: var(--font-regular);
 }
 
-main .searchBox form{
+main .searchBox .fundo form{
     width: 100%;
-    z-index: 2;
+    height: 8%;
+    /* background-color: red; */
     position: relative;
-    left: 50%;
+    top: 40%;
+}
+
+main .searchBox .fundo form .container{
+    width: 100%;
+    height: 100%;
+}
+
+main .searchBox .fundo form .input-box{
+    width: 100%;
+    height: 100%;
+    /* background-color: lightblue; */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+main .searchBox .fundo form .input-box input{
+    font-size: 20px;
+    border-top: 1px solid orange;
+    border-left: 1px solid orange;
+    border-bottom: 1px solid orange;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    padding: 10px 14px;
+    outline: none;
+    width: 65%;
+    font-family: var(--font-regular);
+}
+
+main .searchBox .fundo form .input-box .line-box{
+    width: 2px;
+    height: 100%;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    background-color: whitesmoke;
+}
+
+main .searchBox .fundo form .input-box .line-box .line{
+    width: 100%;
+    height: 80%;
+    background-color: orange;
+    position: relative;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
 }
 
-.fundo{
-    width: 100%;
-    height: 95%;
-    position: absolute;
-    top: 5%;
-    background-color: red;
-    z-index: 1;
+main .searchBox .fundo form .input-box .search-icon{
+    width: 7%;
+    height: 100%;
+    /* background-color: red; */
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    border-right: 1px solid orange;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    background-color: whitesmoke;
+}
+
+main .searchBox .fundo form .input-box .search-icon i{
+    /* background-color: black; */
+    font-size: 30px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: orange;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 900px) {
+
+    html,body{
+        overflow: hidden;
+    }
+
+    main .user{
+        height: 7%;
+    }
+
+    main .user .buttons-user{
+        width: 30%;
+
+    }
 }
