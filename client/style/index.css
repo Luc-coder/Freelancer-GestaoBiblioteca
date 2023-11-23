@@ -43,7 +43,7 @@ main .user .buttons-user .second-link{
 main .searchBox{
     width: 100%;
     height: 95%;
-    background-image: url('../../images/library-with-books.jpg');
+    background-image: url('../images/library-with-books.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;

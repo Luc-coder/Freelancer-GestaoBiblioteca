@@ -1,8 +1,15 @@
-const { sequelize } = require("sequelize");
+const sequelize = require("sequelize");
 
-const sequelize = new Sequelize('database', 'root', '123456', {
+const connecton = new Sequelize('database', 'root', '123456', {
     host: 'localhost',
     dialect: 'mssql'
 });
 
-module.exports = sequelize;
+connection.authenticate()
+.then(()=>{
+    console.log("Conexão realizada com sucesso");
+}).catch(()=>{
+    console.log("Erro na conexão");
+});
+
+module.exports = connecton;
