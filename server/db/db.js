@@ -1,9 +1,14 @@
-const sequelize = require("sequelize");
+const Sequelize = require("sequelize");
 
-const connecton = new Sequelize('database', 'root', '123456', {
+const db = new Sequelize('biblioteca', 'root', '123456', {
     host: 'localhost',
-    dialect: 'mssql'
+    dialect: 'mysql'
 });
+
+// const db = new Sequelize('biblioteca', 'root', 'root', {
+//     host: 'localhost',
+//     dialect: 'mysql'
+// });
 
 connection.authenticate()
 .then(()=>{
@@ -12,4 +17,4 @@ connection.authenticate()
     console.log("Erro na conexão");
 });
 
-module.exports = connecton;
+module.exports = db;

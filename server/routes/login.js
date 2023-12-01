@@ -1,13 +1,12 @@
-const express = require("express");
+//config
+const express = require('express');
 const login = express();
+const path = require('path');
 
-const path = require("path");
-
-login.use(express.static(path.join(__dirname, '../../client')));
-
-login.post('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/login.html'));
+//rotas
+login.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "../../client/login.html"));
 });
 
-
+//exportacao
 module.exports = login;
