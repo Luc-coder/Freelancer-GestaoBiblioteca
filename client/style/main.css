@@ -2,24 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: FontAwesome;
 }
 
 html, body{
     height: 100%;
-    font-family: var(--font-regular);
 }
 
 .container{
     padding: 0 2%;
     margin: 0 auto;
     max-width: 1280px;
-}
-
-:root{
-    --primary-color: ;
-    --secondary-color: ;
-    --primary-bg: ;
-    --secondary-bg: ;
-    --font-regular:'Open Sans', sans-serif;
 }
