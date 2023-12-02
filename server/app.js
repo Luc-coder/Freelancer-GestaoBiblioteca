@@ -9,9 +9,13 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 //importacao rotas
 const login = require('./routes/login.js');
+const cadastro = require('./routes/cadastro.js');
+const home = require('./routes/home.js');
 
 //rotas
 app.use('/', login);
+app.post('/cadastro', cadastro);
+app.use('/home', home);
 
 
 //inicializador
