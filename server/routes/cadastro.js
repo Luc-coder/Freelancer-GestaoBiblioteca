@@ -17,10 +17,7 @@ cadastro.post('/cadastro', (req, res) => {
     .then(existingUser => {
       if (existingUser) {
         //alerta que email ja esta cadastrado
-        return res.status(400).json({
-          erro: true,
-          mensagem: "Erro: Email já cadastrado!"
-        });
+        res.send("<script>alert('Email já cadastrado!');</script>");
       } else {
        //cria a conta
         UserController.create(newUser)
@@ -30,11 +27,8 @@ cadastro.post('/cadastro', (req, res) => {
           })
           .catch((error) => {
             //erro interno no servidor
-            console.error('Erro ao cadastrar o paciente:', error);
-            return res.status(500).json({
-              erro: true,
-              mensagem: "Erro: Usuário não cadastrado com sucesso!"
-            });
+            console.error('Erro ao buscar usuário:', error);
+            res.send('Erro no servidor' + error);
           });
       }
     });

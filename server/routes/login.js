@@ -4,37 +4,45 @@ const login = express();
 const path = require('path');
 
 //importacao de rota
-const UserController = require('../models/UserController')
+const UserController = require('../models/UserController');
+
+login.use(express.urlencoded({ extended: true }));
+login.use(express.json());
+
 
 //rotas
+//rota para renderizar
 login.get('/', (req, res) => {
     //renderiza a tela de login
     res.sendFile(path.join(__dirname, "../../client/login.html"));
+})
 
-    const { email, password } = req.body;
+//rota para fazer a verificação do login
+login.post('/', async (req, res) => {
 
-    UserClient.findOne({ where: { email } })
-    .then((user) => {
-      if (!user) {
-        
-        res.send("<script>alert('Usuário não encontrado!');</script>") +
-        res.sendFile(path.join(__dirname, '../client/index.html'));
-      } else {
-        if (user.password === password) {
-          
-          req.session.pacienteNome = user.name;
-          res.redirect('/pacienteLogado');
-            
-        } else {
-          res.send("<script>alert('Senha incorreta!');</script>") + 
-          res.sendFile(path.join(__dirname, '../client/index.html'));
-        }
-      }
-    })
-    .catch((error) => {
-      console.error('Erro ao buscar usuário:', error);
-      res.send('Erro no servidor' + error);
-    });
+  //logica para o login
+  const { email, password } = req.body;
+
+  UserController.findOne({ where: { email } })
+      .then((user) => {
+          if (!user) {
+            //email não cadastrado
+              res.send("<script>alert('Usuário não encontrado! Esse email não tem cadastro.');</script>");
+          } else {
+              if (user.password === password) {
+                  // Autenticação bem-sucedida, redireciona para a tela home
+                  res.redirect('/home');
+              } else {
+                //senha incorreta
+                  res.send("<script>alert('Senha incorreta!');</script>");
+              }
+          }
+      })
+      .catch((error) => {
+        //erro no servidor
+          console.error('Erro ao buscar usuário:', error);
+          res.send('Erro no servidor' + error);
+      });
 });
 
 //exportacao

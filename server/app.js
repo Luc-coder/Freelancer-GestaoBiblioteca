@@ -13,9 +13,10 @@ const cadastro = require('./routes/cadastro.js');
 const home = require('./routes/home.js');
 
 //rotas
-app.use('/', login);
+app.all('/', login);
+// app.post('/', login);
 app.post('/cadastro', cadastro);
-app.use('/home', home);
+app.get('/home', home);
 
 
 //inicializador
