@@ -2,13 +2,11 @@
 const express = require('express');
 const login = express();
 const path = require('path');
-
-//importacao de rota
-const UserController = require('../models/UserController');
-
 login.use(express.urlencoded({ extended: true }));
 login.use(express.json());
 
+//importacao de controller
+const UserController = require('../models/UserController');
 
 //rotas
 //rota para renderizar

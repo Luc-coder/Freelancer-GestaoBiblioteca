@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="./js/home.js" defer></script>
     <title>Biblioteca</title>
     
 </head>
@@ -23,22 +24,22 @@
 
     <main>
         <div class="container">
-            <div class="card color">
+            <div class="card color" onclick="redirecionaCadastro()">
                 <h2>LIVROS</h2>
                 <P>cadastre seu livro</P>
                 <img class="image" src="./images/pilha-de-livros.png">
             </div>
-            <div class="card color">
+            <div class="card color" onclick="redirecionaConsulta()">
                 <h2>CONSULTA</h2>
                 <P>consulte seu livro</P>
                 <img class="image" src="./images/lupa.png">
             </div>
-            <div class="card color">
+            <div class="card color" onclick="redirecionaDelete()">
                 <h2>DELETE</h2>
                 <P>delete seu livro</P>
                 <img class="image" src="./images/bin.png">
             </div>
-            <div class="card color">
+            <div class="card color" onclick="redirecionaAtualiza()">
                 <h2>ATUALIZAR</h2>
                 <P>atualize sua lista</P>
                 <img class="image" src="./images/atualizar.png">

@@ -1,11 +1,11 @@
 //config
 const Sequelize = require("sequelize");
 
-//impotacao
+//importacao
 const db = require('../db/db.js');
 
 //criador e gerenciador da tabela
-const Book = db.define('book', {
+const LivroController = db.define('book', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -36,7 +36,7 @@ const Book = db.define('book', {
 });
 
 //criador e gerenciador da tabela
-Book.sync();
+LivroController.sync();
 
 //exportacao
-module.exports = Book;
+module.exports = LivroController;

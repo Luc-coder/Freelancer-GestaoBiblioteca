@@ -11,12 +11,14 @@ app.use(express.static(path.join(__dirname, '../client')));
 const login = require('./routes/login.js');
 const cadastro = require('./routes/cadastro.js');
 const home = require('./routes/home.js');
+const cadastraLivro = require('./routes/cadastraLivro.js');
 
 //rotas
 app.all('/', login);
 // app.post('/', login);
 app.post('/cadastro', cadastro);
 app.get('/home', home);
+app.post('/cadastraLivro', cadastraLivro);
 
 
 //inicializador

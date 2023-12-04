@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 cadastro.use(bodyParser.urlencoded({ extended: false }));
 cadastro.use(bodyParser.json());
 
-//importacao de rotas
+//importacao de controller
 const UserController = require('../models/UserController');
 
 //rota
@@ -27,7 +27,7 @@ cadastro.post('/cadastro', (req, res) => {
           })
           .catch((error) => {
             //erro interno no servidor
-            console.error('Erro ao buscar usuário:', error);
+            console.error('Erro ao cadastrar usuário:', error);
             res.send('Erro no servidor' + error);
           });
       }
