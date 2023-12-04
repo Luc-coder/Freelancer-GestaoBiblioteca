@@ -3,7 +3,7 @@ function redirecionaCadastro(){
 }
 
 function redirecionaConsulta(){
-    window.location.href = "consultaLivro.html";
+    window.location.href = "/consultaLivro";
 }
 
 function redirecionaDelete(){

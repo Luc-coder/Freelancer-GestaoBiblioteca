@@ -7,7 +7,28 @@
 </head>
 <body>
     
-    <h2>Consulte seu livro</h2>
+    <h2>Consulte seu livro ejs</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Autor</th>
+            <th>Gênero</th>
+            <th>Data de Publicação</th>
+            <th>Editora</th>
+        </tr>
+        <% books.forEach(book => { %>
+            <tr>
+                <td><%= book.id %></td>
+                <td><%= book.name %></td>
+                <td><%= book.author %></td>
+                <td><%= book.genero %></td>
+                <td><%= book.data_publicacao %></td>
+                <td><%= book.editora %></td>
+            </tr>
+        <% }); %>
+    </table>
 
 </body>
 </html>
