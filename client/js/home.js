@@ -11,5 +11,5 @@ function redirecionaDelete(){
 }
 
 function redirecionaAtualiza(){
-    window.location.href = "atualizaLivro.html";
+    window.location.href = "/atualizaLivro";
 }

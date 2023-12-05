@@ -25,7 +25,7 @@ const LivroController = db.define('book', {
         allowNull: false,
     },
     data_publicacao: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
     },
     editora: {

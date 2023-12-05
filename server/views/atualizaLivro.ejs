@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Atualize seu livro</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Autor</th>
+                <th>Gênero</th>
+                <th>Data de Publicação</th>
+                <th>Editora</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% livros.forEach(livro => { %>
+                <tr>
+                    <td><%= livro.id %></td>
+                    <td><%= livro.name %></td>
+                    <td><%= livro.author %></td>
+                    <td><%= livro.genero %></td>
+                    <td><%= formatDate(livro.data_publicacao) %></td>
+                    <td><%= livro.editora %></td>
+                    <td><a href="/editarLivro/<%= livro.id %>">Editar</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <% function formatDate(date) {
+        if (!date) return '';
+    
+        const dateObject = new Date(date);
+        
+        // Get the current time zone offset in minutes
+        const timezoneOffset = dateObject.getTimezoneOffset();
+    
+        // Adjust the date by adding the offset in minutes
+        dateObject.setMinutes(dateObject.getMinutes() + timezoneOffset);
+    
+        const options = { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' };
+    
+        // Format the adjusted date using the provided options
+        const formattedDate = dateObject.toLocaleDateString('pt-BR', options);
+    
+        return formattedDate;
+    } %>
+
+</body>
+</html>

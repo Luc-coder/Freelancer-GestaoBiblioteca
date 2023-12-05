@@ -13,6 +13,7 @@ const cadastro = require('./routes/cadastro.js');
 const home = require('./routes/home.js');
 const cadastraLivro = require('./routes/cadastraLivro.js');
 const consultaLivro = require('./routes/consultaLivro.js');
+const atualizaLivro = require('./routes/atualizaLivro.js');
 
 //rotas
 app.all('/', login);
@@ -20,6 +21,9 @@ app.post('/cadastro', cadastro);
 app.get('/home', home);
 app.post('/cadastraLivro', cadastraLivro);
 app.get('/consultaLivro', consultaLivro);
+app.get('/atualizaLivro', atualizaLivro);
+app.get('/editarLivro/:id', atualizaLivro);
+app.post('/atualizarLivro', atualizaLivro);
 
 
 //inicializador

@@ -9,7 +9,7 @@ consultaLivro.use(express.static(path.join(__dirname, "../views")));
 //importacao de controller
 const LivroController = require('../models/LivroController');
 
-//rota
+//rota para mostrar livros
 consultaLivro.get('/consultaLivro', async (req, res) => {
     LivroController.findAll()
     .then( books => {
