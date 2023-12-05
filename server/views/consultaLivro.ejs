@@ -32,20 +32,11 @@
 
     <% function formatDate(date) {
         if (!date) return '';
-    
         const dateObject = new Date(date);
-        
-        // Get the current time zone offset in minutes
         const timezoneOffset = dateObject.getTimezoneOffset();
-    
-        // Adjust the date by adding the offset in minutes
         dateObject.setMinutes(dateObject.getMinutes() + timezoneOffset);
-    
         const options = { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' };
-    
-        // Format the adjusted date using the provided options
         const formattedDate = dateObject.toLocaleDateString('pt-BR', options);
-    
         return formattedDate;
     } %>
 

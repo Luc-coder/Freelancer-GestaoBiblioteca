@@ -42,6 +42,7 @@ atualizaLivro.post('/atualizarLivro', async (req, res) => {
         // Encontre o livro pelo ID
         const livro = await LivroController.findByPk(livroId);
 
+        //campos
         livro.id = req.body.id;
         livro.name = req.body.name;
         livro.author = req.body.author;
