@@ -8,39 +8,47 @@
     <link rel="stylesheet" href="css/consultaLivro.css">
 </head>
 <body>
+    <header>
+        <div class="cabecalho">
+            <h1>CONSULTA DE LIVROS</h1>
+            <a href="../../client/login.html"><img src="img/sair.png"></a>      
+        </div>
+    </header>
     
-    <h2>Consulte seu livro ejs</h2>
-
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Autor</th>
-            <th>Gênero</th>
-            <th>Data de Publicação</th>
-            <th>Editora</th>
-        </tr>
-        <% books.forEach(book => { %>
+    
+    <div class="container">
+        <table class="card color" border="1">
             <tr>
-                <td><%= book.id %></td>
-                <td><%= book.name %></td>
-                <td><%= book.author %></td>
-                <td><%= book.genero %></td>
-                <td><%= formatDate(book.data_publicacao) %></td>
-                <td><%= book.editora %></td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Autor</th>
+                <th>Gênero</th>
+                <th>Data de Publicação</th>
+                <th>Editora</th>
             </tr>
-        <% }); %>
-    </table>
-
-    <% function formatDate(date) {
-        if (!date) return '';
-        const dateObject = new Date(date);
-        const timezoneOffset = dateObject.getTimezoneOffset();
-        dateObject.setMinutes(dateObject.getMinutes() + timezoneOffset);
-        const options = { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' };
-        const formattedDate = dateObject.toLocaleDateString('pt-BR', options);
-        return formattedDate;
-    } %>
-
+            <% books.forEach(book => { %>
+                <tr>
+                    <td><%= book.id %></td>
+                    <td><%= book.name %></td>
+                    <td><%= book.author %></td>
+                    <td><%= book.genero %></td>
+                    <td><%= formatDate(book.data_publicacao) %></td>
+                    <td><%= book.editora %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+        <% function formatDate(date) {
+            if (!date) return '';
+            const dateObject = new Date(date);
+            const timezoneOffset = dateObject.getTimezoneOffset();
+            dateObject.setMinutes(dateObject.getMinutes() + timezoneOffset);
+            const options = { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' };
+            const formattedDate = dateObject.toLocaleDateString('pt-BR', options);
+            return formattedDate;
+        } %>
+        <footer>
+            <p>Todos os direitos reservados - &copy; 2023</p>
+        </footer>
 </body>
 </html>

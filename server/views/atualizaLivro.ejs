@@ -8,35 +8,37 @@
     <link rel="stylesheet" href="css/atualizaLivro.css">
 </head>
 <body>
-    
-    <h2>Atualize seu livro</h2>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Autor</th>
-                <th>Gênero</th>
-                <th>Data de Publicação</th>
-                <th>Editora</th>
-                <th>Editar</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% livros.forEach(livro => { %>
+    <header class="cabecalho">
+        <h1>ATUALIZAR LIVRO</h1>
+        <a href="../../client/login.html"><img src="img/sair.png"></a>
+    </header>
+    
+   
+    <div class="container">
+        <table class="card color" border="1">
                 <tr>
-                    <td><%= livro.id %></td>
-                    <td><%= livro.name %></td>
-                    <td><%= livro.author %></td>
-                    <td><%= livro.genero %></td>
-                    <td><%= formatDate(livro.data_publicacao) %></td>
-                    <td><%= livro.editora %></td>
-                    <td><a href="/editarLivro/<%= livro.id %>">Editar</a></td>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Autor</th>
+                    <th>Gênero</th>
+                    <th>Data de Publicação</th>
+                    <th>Editora</th>
+                    <th>Editar</th>
                 </tr>
-            <% }); %>
-        </tbody>
-    </table>
+                <% livros.forEach(livro => { %>
+                    <tr>
+                        <td><%= livro.id %></td>
+                        <td><%= livro.name %></td>
+                        <td><%= livro.author %></td>
+                        <td><%= livro.genero %></td>
+                        <td><%= formatDate(livro.data_publicacao) %></td>
+                        <td><%= livro.editora %></td>
+                        <td><a href="/editarLivro/<%= livro.id %>">Editar</a></td>
+                    </tr>
+                <% }); %>
+       </table>
+    </body>
 
     <% function formatDate(date) {
         if (!date) return '';
@@ -47,6 +49,8 @@
         const formattedDate = dateObject.toLocaleDateString('pt-BR', options);
         return formattedDate;
     } %>
-
+    <footer>
+        <p>Todos os direitos reservados - &copy; 2023</p>
+    </footer>
 </body>
 </html>

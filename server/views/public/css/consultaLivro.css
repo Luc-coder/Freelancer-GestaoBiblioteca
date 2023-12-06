@@ -1,0 +1,60 @@
+.card{
+    border: 5px;
+    box-shadow:  8px 8px 13px 0 rgb(32, 32, 32);
+    padding: 35px;
+    margin: 20px;
+    width: 80%;
+    transition:all 0.3s ease-out; 
+}
+.color{
+    border-left: 3px solid rgb(190, 190, 2);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cabecalho h1 {
+    text-align: center;
+    background-color: rgb(190, 190, 2);
+    width: 100%;
+    border-bottom: 1px solid rgb(190, 190, 2);
+    padding: 20px 0;
+    color: white;
+}
+.cabecalho a{
+    position: relative;
+    top: -70px;
+    float: right;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+.cabecalho a img{
+    float: right;
+    max-width: 40px;
+    max-height: 40px;
+}
+table tr th{
+padding: 5px;
+}
+
+table tr td{
+    padding: 5px;
+}
+
+
+
+
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p{
+    background-color: rgb(190, 190, 2);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}

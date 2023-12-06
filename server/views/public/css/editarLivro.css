@@ -1,0 +1,11 @@
+/*.cabecalho h1 {
+    text-align: center;
+    background-color: rgb(190, 190, 2);
+    width: 100%;
+    border-bottom: 1px solid rgb(190, 190, 2);
+    padding: 20px 0;
+    color: white;
+}*/
+.cabecalho{
+    color: red;
+}

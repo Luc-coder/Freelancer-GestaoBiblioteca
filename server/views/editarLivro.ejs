@@ -8,38 +8,46 @@
     <link rel="stylesheet" href="css/editarLivro.css">
 </head>
 <body>
-    <h2>Editar Livro</h2>
+    <header class="cabecalho">
+        <h1>EDITAR LIVRO</h1>
+        <a href="../../client/login.html"><img src="img/sair.png"></a>
+    </header>
+   
 
-    <form action="/atualizarLivro" method="post">
+    <form class="container" action="/atualizarLivro" method="post">
         <!--nao precisa estilizar o input type hidden-->
-        <input type="hidden" name="id" value="<%= livro.id %>">
-        <label for="">Nome</label>
-        <input type="text" name="name" value="<%= livro.name %>">
-        <label for="">Autor</label>
-        <input type="text" name="author" value="<%= livro.author %>">
-        <label for="">Gênero</label>
-        <!---->
-        <!-- <input type="text" name="genero" value="<%= livro.genero %>"> -->
-        <select name="genero" id="">
-            <option value="acao" <%= livro.genero === 'acao' ? 'selected' : '' %>>Ação</option>
-            <option value="aventura" <%= livro.genero === 'aventura' ? 'selected' : '' %>>Aventura</option>
-            <option value="ficcao" <%= livro.genero === 'ficcao' ? 'selected' : '' %>>Ficção</option>
-            <option value="suspense" <%= livro.genero === 'suspense' ? 'selected' : '' %>>Suspense</option>
-            <option value="terror" <%= livro.genero === 'terror' ? 'selected' : '' %>>Terror</option>
-            <option value="comedia" <%= livro.genero === 'comedia' ? 'selected' : '' %>>Comédia</option>
-            <option value="quadrinho" <%= livro.genero === 'quadrinho' ? 'selected' : '' %>>Quadrinho</option>
-            <option value="biografia" <%= livro.genero === 'biografia' ? 'selected' : '' %>>Biografia</option>
-        </select>
-        <label for="">Data de Publicação</label>
-        <input type="date" name="data_publicacao" value="<%= formatDate(livro.data_publicacao) %>">
-        <label for="">Editora</label>
-        <input type="text" name="editora" value="<%= livro.editora %>">
-        <button type="submit">Atualizar Livro</button>
+        <div class="card color">
+            <input type="hidden" name="id" value="<%= livro.id %>">
+            <label for="">Nome</label>
+            <input type="text" name="name" value="<%= livro.name %>">
+            <label for="">Autor</label>
+            <input type="text" name="author" value="<%= livro.author %>">
+            <label for="">Gênero</label>
+            <!---->
+            <!-- <input type="text" name="genero" value="<%= livro.genero %>"> -->
+            <select name="genero" id="">
+                <option value="acao" <%= livro.genero === 'acao' ? 'selected' : '' %>>Ação</option>
+                <option value="aventura" <%= livro.genero === 'aventura' ? 'selected' : '' %>>Aventura</option>
+                <option value="ficcao" <%= livro.genero === 'ficcao' ? 'selected' : '' %>>Ficção</option>
+                <option value="suspense" <%= livro.genero === 'suspense' ? 'selected' : '' %>>Suspense</option>
+                <option value="terror" <%= livro.genero === 'terror' ? 'selected' : '' %>>Terror</option>
+                <option value="comedia" <%= livro.genero === 'comedia' ? 'selected' : '' %>>Comédia</option>
+                <option value="quadrinho" <%= livro.genero === 'quadrinho' ? 'selected' : '' %>>Quadrinho</option>
+                <option value="biografia" <%= livro.genero === 'biografia' ? 'selected' : '' %>>Biografia</option>
+            </select>
+            <label for="">Data de Publicação</label>
+            <input type="date" name="data_publicacao" value="<%= formatDate(livro.data_publicacao) %>">
+            <label for="">Editora</label>
+            <input type="text" name="editora" value="<%= livro.editora %>">
+            <button type="submit">Atualizar Livro</button>
+        </div>
     </form>
 
     <% function formatDate(date) {
         return date ? new Date(date).toISOString().split('T')[0] : '';
     } %>
-
+    <footer>
+        <p>Todos os direitos reservados - &copy; 2023</p>
+    </footer>
 </body>
 </html>
