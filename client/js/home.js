@@ -7,7 +7,7 @@ function redirecionaConsulta(){
 }
 
 function redirecionaDelete(){
-    window.location.href = "deleteLivro.html";
+    window.location.href = "/deleteLivro";
 }
 
 function redirecionaAtualiza(){
