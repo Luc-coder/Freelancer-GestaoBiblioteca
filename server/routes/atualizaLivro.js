@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 atualizaLivro.use(bodyParser.urlencoded({ extended: true }));
 atualizaLivro.set('view engine', 'ejs');
 atualizaLivro.set('views', path.join(__dirname, '../views'));
-atualizaLivro.use(express.static(path.join(__dirname, "../views")));
+// atualizaLivro.use(express.static(path.join(__dirname, "../views")));
+atualizaLivro.use(express.static(path.join(__dirname, "../public")));
 
 //importacao de controller
 const LivroController = require('../models/LivroController');
