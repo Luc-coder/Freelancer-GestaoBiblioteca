@@ -41,8 +41,8 @@ button {
     cursor: pointer;
     font-size: 16px;
     position: relative;
-    left: 100%;
-    transform: translateX(-100%);
+    left: 50%;
+    transform: translateX(-50%);
     transition: 0.5s;
     display: block;
 }

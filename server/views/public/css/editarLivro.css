@@ -1,3 +1,7 @@
+*{
+    overflow: hidden;
+}
+
 header{
     width: 100%;
     background-color: rgb(190, 190, 2);
@@ -43,4 +47,71 @@ header{
 .cabecalho .logout a img{
     max-width: 40px;
     max-height: 40px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 100%;*/
+}
+
+.card{
+    border: 5px;
+    box-shadow:  8px 8px 13px 0 rgb(32, 32, 32);
+    padding: 35px;
+    margin: 20px;
+    width: 400px;
+    transition:all 0.3s ease-out; 
+}
+
+.color{
+    border-left: 3px solid rgb(190, 190, 2);
+}
+
+.buttom{
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px  rgb(32, 32, 32);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+   
+}
+
+.buttom:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+label{
+    color: rgb(0, 0, 0)
+}
+input[type=text]{
+    margin: 4px;
+    padding: 4px;
+    border-radius: 10px;
+}
+select[name=genero]{
+    margin: 4px;
+    padding: 4px;
+    border-radius: 10px;
+}
+input[type=date]{
+    margin: 4px;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p{
+    background-color: rgb(190, 190, 2);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
 }

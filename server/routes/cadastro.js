@@ -17,7 +17,7 @@ cadastro.post('/cadastro', (req, res) => {
     .then(existingUser => {
       if (existingUser) {
         //alerta que email ja esta cadastrado
-        res.send("<script>alert('Email já cadastrado!');</script>");
+        res.send("<script>alert('Email já cadastrado!');window.location.href = 'cadastro.html';</script>");
       } else {
        //cria a conta
         UserController.create(newUser)

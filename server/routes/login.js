@@ -25,14 +25,14 @@ login.post('/', async (req, res) => {
       .then((user) => {
           if (!user) {
             //email não cadastrado
-              res.send("<script>alert('Usuário não encontrado! Esse email não tem cadastro.');</script>");
+              res.send("<script>alert('Usuário não encontrado! Esse email não tem cadastro.');window.location.href = 'login.html';</script>");
           } else {
               if (user.password === password) {
                   // Autenticação bem-sucedida, redireciona para a tela home
                   res.redirect('/home');
               } else {
                 //senha incorreta
-                  res.send("<script>alert('Senha incorreta!');</script>");
+                  res.send("<script>alert('Senha incorreta!');window.location.href = 'login.html';</script>");
               }
           }
       })

@@ -9,29 +9,33 @@
 </head>
 <body>
 
+
     <header>
         <div class="cabecalho">
             <div class="arrow">
-                <a href="home.html"><img src="images/seta-esquerda.png" /></a>
+                <a href="/atualizaLivro"><img src="../images/seta-esquerda.png" /></a>
             </div>
             <div class="title">
                 <h1>EDITAR LIVRO</h1>
             </div>
             <div class="logout">
-                <a href="login.html"><img src="images/sair.png"></a>
+                <a href="/"><img src="../images/sair.png"></a>
             </div>
         </div>
     </header>
-   
 
     <form class="container" action="/atualizarLivro" method="post">
         <!--nao precisa estilizar o input type hidden-->
+
+        
         <div class="card color">
             <input type="hidden" name="id" value="<%= livro.id %>">
             <label for="">Nome</label>
             <input type="text" name="name" value="<%= livro.name %>">
+            <br>
             <label for="">Autor</label>
             <input type="text" name="author" value="<%= livro.author %>">
+            <br>
             <label for="">Gênero</label>
             <!---->
             <!-- <input type="text" name="genero" value="<%= livro.genero %>"> -->
@@ -45,11 +49,15 @@
                 <option value="quadrinho" <%= livro.genero === 'quadrinho' ? 'selected' : '' %>>Quadrinho</option>
                 <option value="biografia" <%= livro.genero === 'biografia' ? 'selected' : '' %>>Biografia</option>
             </select>
+            <br>
             <label for="">Data de Publicação</label>
             <input type="date" name="data_publicacao" value="<%= formatDate(livro.data_publicacao) %>">
+            <br>
             <label for="">Editora</label>
             <input type="text" name="editora" value="<%= livro.editora %>">
-            <button type="submit">Atualizar Livro</button>
+            <br>
+            <br>
+            <button class="buttom" type="submit">Atualizar Livro</button>
         </div>
     </form>
 
